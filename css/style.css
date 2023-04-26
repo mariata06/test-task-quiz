@@ -1,0 +1,441 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+/*
+=============== colors =================
+https: //www.htmlcsscolor.com/hex/9B9B9B
+========================================
+*/
+:root {
+    --color-reef: #CAFFA0;
+    --color-eclipse: #383838;
+    --color-gainsboro: #D8D8D8;
+    --color-white-smoke: #F5F5F5;
+    --color-nobel: #9B9B9B;
+    --color-white: #ffffff;
+
+    --transition: opacity 0.3s ease-out;
+  
+    --radius-24: 24px;
+    --radius-16: 16px;
+    --radius-12: 12px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button,
+input,
+a {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition);
+    background-color: transparent;
+}
+
+button:hover,
+button:focus,
+input:hover,
+input:focus,
+a:hover,
+a:focus {
+    opacity: 0.7;
+}
+
+/*
+=============== 
+Fonts
+===============
+*/
+@font-face {
+    font-style: normal;
+    font-weight: 400;
+    font-family: "Onest";
+
+    font-display: swap;
+    src: url("../fonts/onest-regular1602-hint.woff") format("woff");
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 500;
+    font-family: "Onest";
+
+    font-display: swap;
+    src: url("../fonts/onest-medium1602-hint.woff") format("woff");
+}
+
+html {
+    color: var(--color-eclipse);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: "Onest", "Arial", sans-serif;
+}
+
+.container {
+    width: 1216px;
+    max-height: 456px;
+    margin: auto;
+}
+
+.quiz {
+    height: 456px;
+    padding: 32px;
+    border-radius: var(--radius-24);
+    background-color: var(--color-reef);
+}
+
+.quiz__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz__desc h1 {
+    font-style: 500;
+    font-size: 32px;
+    line-height: 36px;
+}
+
+.quiz__desc p {
+    width: 400px;
+    margin-bottom: 45px;
+}
+
+.step {
+    height: 100%;
+    width: 576px;
+    min-width: 576px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-24);
+    padding: 32px;
+    margin-bottom: 5px;
+    position: absolute;
+}
+
+.step__title {
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.step--people .form__group,
+.step--education .form__group,
+.step--plan .form__group {
+    display: grid;
+    grid-template-columns: 252px 252px;
+    column-gap: 8px;
+    row-gap: 8px;
+    margin-bottom: 56px;
+}
+
+.step--university .form__group,
+.step--education-form .form__group,
+.step--paid .form__group,
+.step--selection .form__group {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    margin-bottom: 56px;
+}
+
+label {
+    width: 252px;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 16px;
+    border-radius: var(--radius-16);
+    background-color: var(--color-white-smoke);
+}
+
+input[type='radio'] {
+    cursor: pointer;
+    position: relative;
+    appearance: none;
+    border-radius: var(--radius-16);
+    background-color: var(--color-white-smoke);
+}
+
+input[type='radio']::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 1px solid var(--color-gainsboro);
+    top: 0;
+    right: 0;
+}
+
+input[type='radio']:checked::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--color-white);
+    border: 6px solid var(--color-eclipse);
+    top: 0;
+    right: 0;
+}
+
+.form-btn {
+    width: 100%;
+    background-color: var(--color-eclipse);
+    color: var(--color-white);
+    border-radius: var(--radius-16);
+    margin-bottom: 8px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    /* border: none;
+    outline: none; */
+}
+
+.form-control {
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type='radio'] + .form-control {
+    /* width: 252px; */
+    width: 100%;
+    background-color: var(--color-gainsboro);
+}
+
+input[type='radio']:checked + .form-control {
+    border: 1px solid var(--color-eclipse);
+    background-color: var(--color-white);
+}
+
+.step__title span {
+    color: var(--color-nobel);
+}
+
+.quiz__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+.quiz__form .form__group {
+    width: 100%;
+    margin-bottom: 12px;
+    align-content: baseline;
+}
+
+.quiz__form .quiz__btns {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 32px;
+    z-index: 100;
+}
+
+.next-btn,
+.prev-btn {
+    min-width: 108px;
+    border-radius: var(--radius-12);
+    padding: 12px 20px;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prev-btn {
+    background-color: var(--color-white);
+    color: var(--color-eclipse);
+    border: 1px solid var(--color-eclipse);
+}
+
+.next-btn {
+    background-color: var(--color-eclipse);
+    color: var(--color-white);
+    margin-left: auto;
+}
+
+.next-btn svg {
+    display: block;
+    width: 8px;
+    height: 13px;
+}
+
+.form__policy {
+    display: flex;
+    color: var(--color-nobel);
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.form__policy a {
+    text-decoration: none;
+    position: relative;
+}
+
+.form__policy a::after {
+    position: absolute;
+    display: block;
+    height: 1px;
+    content: '';
+    width: 100%;
+    bottom: 3px;
+    background-color: var(--color-eclipse);
+}
+
+/*///////////////////SELECT Checkbox///////////////////////*/
+.select-btn {
+    width: 100%;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: var(--radius-16);
+    background-color: var(--color-white-smoke);
+    margin-bottom: auto;
+    user-select: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.select-btn .btn-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--color-nobel);
+}
+
+.select-btn .btn-text span {
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--color-eclipse);
+}
+
+.select-btn.open ~ .form__select-wrapper {
+    display: block;
+}
+
+.select-btn.open .arrow-down {
+    transition: 0.3s ease-out;
+}
+
+.select-btn.open .arrow-down {
+    transform: rotate(-180deg);
+}
+
+.form__select-wrapper {
+    padding-right: 10px;
+    border-radius: var(--radius-16);
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    height: 172px;
+    display: none;
+    transition: 0.3s ease-out;
+}
+
+.list-items {
+    height: 172px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.list-items::-webkit-scrollbar {
+    width: 4px;
+}
+
+.list-items::-webkit-scrollbar-track {
+    background-color: var(--color-white);
+    padding-right: 8px;
+}
+
+.list-items::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: var(--color-gainsboro);
+    border-radius: 100px;
+}
+
+.list-items .form-control {
+    background-color: var(--color-white);
+    justify-content: flex-start;
+    padding: 14px 16px;
+    user-select: none;
+    padding-left: 60px;
+    position: relative;
+    cursor: pointer;
+}
+
+.list-items .form-control input {
+    position: absolute;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.list-items .form-control input:before {
+    position: absolute;
+    top: 0;
+    left: -45px;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--color-gainsboro);
+}
+
+.list-items .form-control input:checked:before {
+    border: 1px solid var(--color-eclipse);
+    background-color: var(--color-eclipse);
+}
+
+.list-items .form-control input:checked:after {
+    position: absolute;
+    top: 3px;
+    left: -40px;
+    content: url('/img/check.svg');
+    display: block;
+    width: 12px;
+    height: 10px;
+}
+
+.steps {
+    position: relative;
+    height: 100%;
+    width: 576px;
+}
+
+.prev-btn {
+    display: none;
+}

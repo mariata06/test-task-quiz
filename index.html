@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="quiz">
+            <div class="quiz__content">
+                <div class="quiz__desc">
+                    <h1>Подберём вуз мечты</h1>
+                    <p>Ответьте на 8 простых вопросов, и мы составим список наболее подходящих для вас вузов</p>
+                    <img src="img/quiz-image.png" width="356" height="213" alt="Вуз мечты">
+                </div>
+                <div class="quiz__steps">
+                    <form id="stepForm" class="quiz__form form" action="URL">
+                        <div class="steps">
+                            <!-- Вопрос 1 Для кого -->
+                            <div class="quiz__step step step--people">
+                                <p class="question step__title">Для кого вы ищете учебное заведение?<span class="step__indicator">Шаг 1/9</span></p>
+                                <div class="form__group">
+                                    <label class="form-control">  
+                                        <span>Себе</span>                 
+                                        <input type="radio" name="human" value="self" checked>
+                                    </label>
+                                    <label class="form-control">
+                                        <span>Супругу/Супруге</span>
+                                        <input type="radio" name="human" value="spouse">                                  
+                                    </label>
+                                    <label class="form-control">
+                                        <span>Родственнику</span>
+                                        <input type="radio" name="human" value="relative">                                    
+                                    </label>
+                                    <label class="form-control">
+                                        <span>Коллеге</span>
+                                        <input type="radio" name="human" value="colleague">                                  
+                                    </label>
+                                    <label class="form-control">
+                                        <span>Ребенку</span>
+                                        <input type="radio" name="human" value="kid">
+                                    </label>
+                                    <label class="form-control">
+                                        <span>Другое</span>   
+                                        <input type="radio" name="human" value="other">                                 
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Вопрос 2 в каком городе -->
+                            <div class="quiz__step step step--city">
+                                <p class="question step__title">В каком городе планируете поступать?<span class="step__indicator">Шаг 2/9</span></p>
+                                <div class="form__group">
+                                    <div class="select-btn">
+                                        <span class="btn-text">Город<span>Санкт-Петербург</span></span>
+                                        <span class="arrow-down">
+                                            <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.25 1.5L7 7.75L0.75 1.5" stroke="#9B9B9B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="form__select-wrapper">
+                                        <ul class="list-items">
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox1" value="Saint-Petersburg" checked> 
+                                                    Санкт-Петербург                           
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox1" value="Moscow"> 
+                                                    Москва                            
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox2" value="Novosibirsk">  
+                                                    Новосибирск                                
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox3" value="Nizhny-Novgorod">  
+                                                    Нижний Новгород                                       
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox4" value="Rostov-on-Don">    
+                                                    Ростов-на-Дону                             
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox5" value="Ekaterinburg">    
+                                                    Екатеринбург                           
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox6" value="Krasnodar">    
+                                                    Краснодар                             
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Вопрос 3 какое образование -->
+                            <div class="quiz__step step step--education">
+                                <p class="step__title">Какое образование уже есть?<span>Шаг 3/9</span></p>
+                                <div class="form__group">
+                                    <div class="form-control">
+                                        <label class="form-control">
+                                            <span>9 классов</span>                   
+                                            <input type="radio" name="edu" value="9 class" checked>
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Колледж/техникум</span>                     
+                                            <input type="radio" name="edu" value="college">
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control">  
+                                            <span>10 классов</span>                       
+                                            <input type="radio" name="edu" value="10 class">
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>11 классов</span>                  
+                                            <input type="radio" name="edu" value="11 class">
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control">  
+                                            <span>Училище</span>                          
+                                            <input type="radio" name="edu" value="uchilishche">
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control">    
+                                            <span>Неоконченное высшее</span>               
+                                            <input type="radio" name="edu" value="student">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Вопрос 4 про ВУЗ -->
+                            <div class="quiz__step step step--university">
+                                <p class="step__title">Куда планируете поступать?<span>Шаг 4/9</span></p>
+                                <div class="form__group">
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Вуз</span>                  
+                                            <input type="radio" name="university" value="university" checked>
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Колледж/техникум</span>                  
+                                            <input type="radio" name="university" value="college">
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label class="form-control">  
+                                            <span>Училище</span>                 
+                                            <input type="radio" name="university" value="uchilishche">
+                                        </label>
+                                    </div>   
+                                </div>
+                            </div>
+                            <!-- Вопрос 5 про Форму обучения -->
+                            <div class="quiz__step step step--education-form">
+                                <p class="step__title">Какую форму обучения предпочитаете?<span>Шаг 5/9</span></p>
+                                <div class="form__group">
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Очную</span>                  
+                                            <input type="radio" name="eduform" value="fulltime" checked>
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Заочную</span>                  
+                                            <input type="radio" name="eduform" value="extramural-studies">
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Дистанционную</span>                  
+                                            <input type="radio" name="eduform" value="remote">
+                                        </label>
+                                    </div>   
+                                </div>
+                            </div>
+                            <!-- Вопрос 6 про Платное обучение -->
+                            <div class="quiz__step step step--paid">
+                                <p class="step__title">Рассматриваете платное обучение?<span>Шаг 6/9</span></p>
+                                <div class="form__group">
+                                    <div class="form-control">
+                                        <label class="form-control">  
+                                            <span>Нет, только бюджет</span>                 
+                                            <input type="radio" name="edupaid" value="budget" checked>
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Да, планирую учиться платно</span>                  
+                                            <input type="radio" name="edupaid" value="paid-training">
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Возможны оба варианта</span>                  
+                                            <input type="radio" name="edupaid" value="two-variants">
+                                        </label>
+                                    </div>   
+                                </div>
+                            </div>
+                            <!-- Вопрос 7 про Специальность -->
+                            <div class="quiz__step step step--speciality"> 
+                                <p class="step__title">Какая специальность интересует?<span>Шаг 7/9</span></p>
+                                <div class="form__group">
+                                    <div class="select-btn">
+                                        <span class="btn-text">Специальность <span>Любая</span></span>
+                                        <span class="arrow-down">
+                                            <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.25 1.5L7 7.75L0.75 1.5" stroke="#9B9B9B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="form__select-wrapper">
+                                        <ul class="list-items">
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox1" value="economics" checked> 
+                                                    Экономика                              
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox2" value="philosophy">  
+                                                    Философия                                  
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox3" value="sociology">  
+                                                    Социология                                        
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox4" value="jurisprudence">    
+                                                    Юриспруденция                              
+                                                </label>
+                                            </li>
+                                            <li class="item">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="checkbox5" value="management">    
+                                                    Менеджмент                             
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>  
+                            </div>
+                            <!-- Вопрос 8 про Планы -->
+                            <div class="quiz__step step step--plan">
+                                <p class="step__title">Как скоро планируете поступать?<span>Шаг 8/9</span></p>
+                                <div class="form__group">
+                                    <div class="form-control">
+                                        <label class="form-control">   
+                                            <span>Как можно быстрее</span>                
+                                            <input type="radio" name="radio" value="asap" checked>
+                                        </label>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="form-control"> 
+                                            <span>Месяц</span>                  
+                                            <input type="radio" name="radio" value="month">
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label class="form-control">   
+                                            <span>Квартал</span>                
+                                            <input type="radio" name="radio" value="quarter">
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label class="form-control">     
+                                            <span>Полгода</span>              
+                                            <input type="radio" name="radio" value="six-months">
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label class="form-control">    
+                                            <span>Год</span>               
+                                            <input type="radio" name="radio" value="year">
+                                        </label>
+                                    </div>   
+                                </div>
+                            </div>
+                            <!-- Вопрос 9 про личные данные -->
+                            <div class="quiz__step step step--selection">
+                                <p class="step__title">Ваша подборка готова! 🥳 Куда нам отправить её?<span>Шаг 9/9</span></p>
+                                <div class="form__group">
+                                    <div class="form-control">
+                                        <label for="name" class="form-control">                   
+                                            <input type="text" name="name" id="name" placeholder="Как вас зовут?" required>
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label for="phone" class="form-control">                   
+                                            <input type="tel" name="phone" id="phone" placeholder="Номер телефона" required>
+                                        </label>
+                                    </div>   
+                                    <div class="form-control">
+                                        <label for="email" class="form-control">                   
+                                            <input type="email" name="email" id="email" placeholder="E-mail" required>
+                                        </label>
+                                    </div>   
+                                </div>
+                                <button class="form-btn" type="submit">Получить подборку</button>
+                                <p class="form__policy">Нажимая на кнопку, вы даете согласие на обработку своих&nbsp;<a href="#">Персональных данных</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Общие кнопки Назад - Далее -->
+                        <div class="quiz__btns">                    
+                            <button class="prev-btn" type="button">
+                                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.5 11.5L1.5 6.5L6.5 1.5" stroke="#383838" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Назад
+                                </button>
+                            <button class="next-btn" type="button">
+                                Далее
+                                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.5 1.5L6.5 6.5L1.5 11.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>    
+                    </form> 
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
