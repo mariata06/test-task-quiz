@@ -8,18 +8,19 @@ const question = document.querySelectorAll('.question');
 const phoneInput = document.querySelector('input[type=tel]');
 const selectBtn = document.querySelectorAll('.select-btn');
 const items = document.querySelectorAll('.form-control');
+const popupSuccess = document.querySelector('.popup--ok');
 
 selectBtn.forEach(item => {
-    item.addEventListener('click', () => {
-        item.classList.toggle('open');
-    })    
+  item.addEventListener('click', () => {
+    item.classList.toggle('open');
+  })    
 })
 
 ////////////////////Init Quiz questions//////////////////////////////
 function initRenderQuestion() {
-    for (let i = 0; i < step.length; i++) {
-        step[i].style.zIndex = step.length - i;
-    }
+  for (let i = 0; i < step.length; i++) {
+    step[i].style.zIndex = step.length - i;
+  }
 }
 
 initRenderQuestion();
@@ -28,52 +29,59 @@ initRenderQuestion();
 let currentQuestion = 0;
 
 function answerQuestion() {
-    nextBtn.addEventListener('click', () => {
-        for (let i = 0; i < step.length; i++) {
-            if (Number(step[i].style.zIndex) === step.length) {
-                step[i].style.zIndex = 1;
-            } else {
-                step[i].style.zIndex = Number(step[i].style.zIndex) + 1;
-            } 
-        }
+  nextBtn.addEventListener('click', () => {
+    for (let i = 0; i < step.length; i++) {
+      if (Number(step[i].style.zIndex) === step.length) {
+          step[i].style.zIndex = 1;
+      } else {
+          step[i].style.zIndex = Number(step[i].style.zIndex) + 1;
+      } 
+    }
 
-        currentQuestion++;
-        if (currentQuestion === step.length - 1) {
-            nextBtn.style.display ='none';
-            prevBtn.style.display = 'none';
-        }
+    currentQuestion++;
+    if (currentQuestion === step.length - 1) {
+      nextBtn.style.display ='none';
+      prevBtn.style.display = 'none';
+    }
 
-        if(currentQuestion === 1) {
-            prevBtn.style.display = 'flex';
-        }
-    })
+    if(currentQuestion === 1) {
+      prevBtn.style.display = 'flex';
+    }
+  })
 
-    prevBtn.addEventListener('click', () => {
-        for (let i = 0; i < step.length; i++) {
-            if (Number(step[i].style.zIndex) === 1) {
-                step[i].style.zIndex = step.length;
-            } else {
-                step[i].style.zIndex = Number(step[i].style.zIndex) - 1;
-            } 
-        }
+  prevBtn.addEventListener('click', () => {
+    for (let i = 0; i < step.length; i++) {
+      if (Number(step[i].style.zIndex) === 1) {
+        step[i].style.zIndex = step.length;
+      } else {
+        step[i].style.zIndex = Number(step[i].style.zIndex) - 1;
+      } 
+    }
 
-        currentQuestion--;
-        if(currentQuestion === 0) {
-            prevBtn.style.display = 'none';
-        }
-    })
+    currentQuestion--;
+    if(currentQuestion === 0) {
+      prevBtn.style.display = 'none';
+    }
+  })
 }
 
 answerQuestion();
 
 ////////////////////////////form submitting///////////////////////////
 form.addEventListener('submit', function(evt) {
-    evt.preventDefault();
-    let formData = new FormData(form);
-    for (let [key, value] of formData) {
-        console.log(`${key} - ${value}`)
-    }
+  evt.preventDefault();
+  let formData = new FormData(form);
+  for (let [key, value] of formData) {
+    console.log(`${key} - ${value}`)
+  }
+  popupSuccess.classList.add("show");
 })
+
+document.onclick = function (evt) {
+  if (evt.target.className.toString().includes("popup")) {
+    popupSuccess.classList.remove("show");
+  };
+};
 
 ///////////////////////start validate phone number/////////////////////
 const prefixNumber = (str) => {

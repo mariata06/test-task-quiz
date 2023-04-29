@@ -14,39 +14,46 @@
                 <div class="quiz__desc">
                     <h1>Подберём вуз мечты</h1>
                     <p>Ответьте на 8 простых вопросов, и мы составим список наболее подходящих для вас вузов</p>
-                    <img src="img/quiz-image.png" width="356" height="213" alt="Вуз мечты">
+                    <div class="quiz__img-wrapper">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="img/quiz-image@mobile.png">
+                            <img src="img/quiz-image@desktop.png" alt="Вуз мечты">
+                        </picture>
+                    </div>
                 </div>
                 <div class="quiz__steps">
-                    <form id="stepForm" class="quiz__form form" action="URL">
+                    <form id="stepForm" class="quiz__form form" action="URL" method="post">
                         <div class="steps">
                             <!-- Вопрос 1 Для кого -->
                             <div class="quiz__step step step--people">
                                 <p class="question step__title">Для кого вы ищете учебное заведение?<span class="step__indicator">Шаг 1/9</span></p>
                                 <div class="form__group">
-                                    <label class="form-control">  
-                                        <span>Себе</span>                 
-                                        <input type="radio" name="human" value="self" checked>
-                                    </label>
-                                    <label class="form-control">
-                                        <span>Супругу/Супруге</span>
-                                        <input type="radio" name="human" value="spouse">                                  
-                                    </label>
-                                    <label class="form-control">
-                                        <span>Родственнику</span>
-                                        <input type="radio" name="human" value="relative">                                    
-                                    </label>
-                                    <label class="form-control">
-                                        <span>Коллеге</span>
-                                        <input type="radio" name="human" value="colleague">                                  
-                                    </label>
-                                    <label class="form-control">
-                                        <span>Ребенку</span>
-                                        <input type="radio" name="human" value="kid">
-                                    </label>
-                                    <label class="form-control">
-                                        <span>Другое</span>   
-                                        <input type="radio" name="human" value="other">                                 
-                                    </label>
+                                    <div class="form-control">
+                                        <input id="self" type="radio" name="human" value="self" checked>
+                                        <label for="self">Себе</label> 
+                                    </div>
+                                    <div class="form-control">
+                                        <input id="spouse" type="radio" name="human" value="spouse">     
+                                        <label for="spouse" >Супругу/Супруге</label>
+                                                                     
+                                    </div>
+                                    <div class="form-control">
+                                        <input id="relative" type="radio" name="human" value="relative">  
+                                        <label for="relative">Родственнику</label>                                 
+                                    </div>
+                                    <div class="form-control">
+                                        <input id="colleague" type="radio" name="human" value="colleague"> 
+                                        <label for="colleague">Коллеге</label>                                
+                                    </div>
+                                    <div class="form-control">
+                                        <input id="kid" type="radio" name="human" value="kid">
+                                        <label for="kid">Ребенку</label>
+                                        
+                                    </div>
+                                    <div class="form-control">
+                                        <input id="other" type="radio" name="human" value="other"> 
+                                        <label for="other">Другое</label>                                  
+                                    </div>
                                 </div>
                             </div>
                             <!-- Вопрос 2 в каком городе -->
@@ -114,40 +121,28 @@
                                 <p class="step__title">Какое образование уже есть?<span>Шаг 3/9</span></p>
                                 <div class="form__group">
                                     <div class="form-control">
-                                        <label class="form-control">
-                                            <span>9 классов</span>                   
-                                            <input type="radio" name="edu" value="9 class" checked>
-                                        </label>
+                                        <input id="9class" type="radio" name="edu" value="9 class" checked>
+                                        <label for="9class">9 классов</label>
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Колледж/техникум</span>                     
-                                            <input type="radio" name="edu" value="college">
-                                        </label>
+                                        <input id="college" type="radio" name="edu" value="college">
+                                        <label for="college">Колледж/техникум</label>
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control">  
-                                            <span>10 классов</span>                       
-                                            <input type="radio" name="edu" value="10 class">
-                                        </label>
+                                        <input id="10class" type="radio" name="edu" value="10 class">
+                                        <label for="10class">10 классов</label>  
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>11 классов</span>                  
-                                            <input type="radio" name="edu" value="11 class">
-                                        </label>
+                                        <input id="11class" type="radio" name="edu" value="11 class">
+                                        <label for="11class">11 классов</label>  
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control">  
-                                            <span>Училище</span>                          
-                                            <input type="radio" name="edu" value="uchilishche">
-                                        </label>
+                                        <input id="uchilishche" type="radio" name="edu" value="uchilishche">
+                                        <label for="uchilishche">Училище</label>  
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control">    
-                                            <span>Неоконченное высшее</span>               
-                                            <input type="radio" name="edu" value="student">
-                                        </label>
+                                        <input id="student" type="radio" name="edu" value="student">   
+                                        <label for="student">Неоконченное высшее</label>   
                                     </div>
                                 </div>
                             </div>
@@ -156,22 +151,16 @@
                                 <p class="step__title">Куда планируете поступать?<span>Шаг 4/9</span></p>
                                 <div class="form__group">
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Вуз</span>                  
-                                            <input type="radio" name="university" value="university" checked>
-                                        </label>
+                                        <input id="university2" type="radio" name="university" value="university2" checked>
+                                        <label for="university2">Вуз</label>
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Колледж/техникум</span>                  
-                                            <input type="radio" name="university" value="college">
-                                        </label>
+                                        <input id="college2" type="radio" name="university" value="college2">
+                                        <label for="college2">Колледж/техникум</label>
                                     </div>   
                                     <div class="form-control">
-                                        <label class="form-control">  
-                                            <span>Училище</span>                 
-                                            <input type="radio" name="university" value="uchilishche">
-                                        </label>
+                                        <input id="uchilishche2" type="radio" name="university" value="uchilishche2"> 
+                                        <label for="uchilishche2">Училище</label>  
                                     </div>   
                                 </div>
                             </div>
@@ -180,22 +169,16 @@
                                 <p class="step__title">Какую форму обучения предпочитаете?<span>Шаг 5/9</span></p>
                                 <div class="form__group">
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Очную</span>                  
-                                            <input type="radio" name="eduform" value="fulltime" checked>
-                                        </label>
+                                        <input id="fulltime" type="radio" name="eduform" value="fulltime" checked>
+                                        <label for="fulltime">Очную</label>                  
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Заочную</span>                  
-                                            <input type="radio" name="eduform" value="extramural-studies">
-                                        </label>
+                                        <input id="extramural-studies" type="radio" name="eduform" value="extramural-studies">
+                                        <label for="extramural-studies">Заочную</label> 
                                     </div>   
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Дистанционную</span>                  
-                                            <input type="radio" name="eduform" value="remote">
-                                        </label>
+                                        <input id="remote" type="radio" name="eduform" value="remote">
+                                        <label for="remote">Дистанционную</label>  
                                     </div>   
                                 </div>
                             </div>
@@ -204,22 +187,16 @@
                                 <p class="step__title">Рассматриваете платное обучение?<span>Шаг 6/9</span></p>
                                 <div class="form__group">
                                     <div class="form-control">
-                                        <label class="form-control">  
-                                            <span>Нет, только бюджет</span>                 
-                                            <input type="radio" name="edupaid" value="budget" checked>
-                                        </label>
+                                        <input id="budget" type="radio" name="edupaid" value="budget" checked>
+                                        <label for="budget">Нет, только бюджет</label>                       
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Да, планирую учиться платно</span>                  
-                                            <input type="radio" name="edupaid" value="paid-training">
-                                        </label>
+                                        <input id="paid-training" type="radio" name="edupaid" value="paid-training">
+                                        <label for="paid-training">Да, планирую учиться платно</label>                      
                                     </div>   
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Возможны оба варианта</span>                  
-                                            <input type="radio" name="edupaid" value="two-variants">
-                                        </label>
+                                        <input id="both-variants" type="radio" name="edupaid" value="both-variants">
+                                        <label for="both-variants">Возможны оба варианта</label>                  
                                     </div>   
                                 </div>
                             </div>
@@ -276,34 +253,24 @@
                                 <p class="step__title">Как скоро планируете поступать?<span>Шаг 8/9</span></p>
                                 <div class="form__group">
                                     <div class="form-control">
-                                        <label class="form-control">   
-                                            <span>Как можно быстрее</span>                
-                                            <input type="radio" name="radio" value="asap" checked>
-                                        </label>
+                                        <input id="asap" type="radio" name="radio" value="asap" checked>
+                                        <label for="asap">Как можно быстрее</label>
                                     </div>
                                     <div class="form-control">
-                                        <label class="form-control"> 
-                                            <span>Месяц</span>                  
-                                            <input type="radio" name="radio" value="month">
-                                        </label>
+                                       <input id="month" type="radio" name="radio" value="month"> 
+                                        <label  for="month">Месяц</label>   
                                     </div>   
                                     <div class="form-control">
-                                        <label class="form-control">   
-                                            <span>Квартал</span>                
-                                            <input type="radio" name="radio" value="quarter">
-                                        </label>
+                                        <input id="quarter" type="radio" name="radio" value="quarter"> 
+                                        <label for="quarter">Квартал</label>  
                                     </div>   
                                     <div class="form-control">
-                                        <label class="form-control">     
-                                            <span>Полгода</span>              
-                                            <input type="radio" name="radio" value="six-months">
-                                        </label>
+                                        <input id=six-months type="radio" name="radio" value="six-months">     
+                                        <label for="six-months">Полгода</label> 
                                     </div>   
                                     <div class="form-control">
-                                        <label class="form-control">    
-                                            <span>Год</span>               
-                                            <input type="radio" name="radio" value="year">
-                                        </label>
+                                        <input id="year" type="radio" name="radio" value="year">    
+                                        <label for="year">Год</label>  
                                     </div>   
                                 </div>
                             </div>
@@ -313,22 +280,22 @@
                                 <div class="form__group">
                                     <div class="form-control">
                                         <label for="name" class="form-control">                   
-                                            <input type="text" name="name" id="name" placeholder="Как вас зовут?" required>
+                                            <input type="text" name="user_name" id="name" placeholder="Как вас зовут?" required>
                                         </label>
                                     </div>   
                                     <div class="form-control">
                                         <label for="phone" class="form-control">                   
-                                            <input type="tel" name="phone" id="phone" placeholder="Номер телефона" required>
+                                            <input type="tel" name="user_phone" id="phone" placeholder="Номер телефона" required>
                                         </label>
                                     </div>   
                                     <div class="form-control">
                                         <label for="email" class="form-control">                   
-                                            <input type="email" name="email" id="email" placeholder="E-mail" required>
+                                            <input type="email" name="user_email" id="email" placeholder="E-mail" required>
                                         </label>
                                     </div>   
                                 </div>
                                 <button class="form-btn" type="submit">Получить подборку</button>
-                                <p class="form__policy">Нажимая на кнопку, вы даете согласие на обработку своих&nbsp;<a href="#">Персональных данных</a></p>
+                                <p class="form__policy"><span>Нажимая на кнопку, вы даете согласие на обработку своих&nbsp;<a href="#">Персональных&nbsp;данных</a></span></p>
                             </div>
                         </div>
 
@@ -351,6 +318,26 @@
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- Modal ok -->
+    <div class="popup popup--ok" data-modal>
+        <div class="popup__dialog">
+            <div class="popup__content">
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="28" cy="28" r="28" fill="url(#paint0_linear_1_878)"/>
+                    <path d="M37.625 21.875L25.375 34.125L19.25 28" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_1_878" x1="28" y1="12.8285" x2="28" y2="55.5789" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#BDFF6C"/>
+                    <stop offset="0.93" stop-color="#28CD3F"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+                <h2>Отлично, спасибо!</h2>
+                <p>Мы отправили подборку вам на почту. Если подборка не приходит — проверьте спам, возможно, она попала туда.</p>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

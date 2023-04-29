@@ -120,15 +120,16 @@ html {
     margin-bottom: 45px;
 }
 
-.step {
+.quiz__step {
     height: 100%;
     width: 576px;
     min-width: 576px;
     background-color: var(--color-white);
     border-radius: var(--radius-24);
     padding: 32px;
-    margin-bottom: 5px;
     position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .step__title {
@@ -162,20 +163,24 @@ html {
 }
 
 label {
-    width: 252px;
     display: flex;
     justify-content: space-between;
     padding: 18px 16px;
     border-radius: var(--radius-16);
     background-color: var(--color-white-smoke);
+    cursor: pointer;
 }
 
 input[type='radio'] {
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
     appearance: none;
     border-radius: var(--radius-16);
     background-color: var(--color-white-smoke);
+    margin: 0;
 }
 
 input[type='radio']::after {
@@ -186,8 +191,10 @@ input[type='radio']::after {
     height: 20px;
     border-radius: 100%;
     border: 1px solid var(--color-gainsboro);
-    top: 0;
+    top: 50%;
+    right: 16px;
     right: 0;
+    transform: translateY(-50%);
 }
 
 input[type='radio']:checked::after {
@@ -199,8 +206,6 @@ input[type='radio']:checked::after {
     border-radius: 100%;
     background-color: var(--color-white);
     border: 6px solid var(--color-eclipse);
-    top: 0;
-    right: 0;
 }
 
 .form-btn {
@@ -211,22 +216,22 @@ input[type='radio']:checked::after {
     margin-bottom: 8px;
     padding-top: 18px;
     padding-bottom: 18px;
-    /* border: none;
-    outline: none; */
 }
 
 .form-control {
     width: 100%;
     cursor: pointer;
+    user-select: none;
+    position: relative;
 }
 
-input[type='radio'] + .form-control {
-    /* width: 252px; */
+input[type='radio'] + label {
     width: 100%;
-    background-color: var(--color-gainsboro);
+    background-color: var(--color-white-smoke);
+    border: 1px solid var(--color-white-smoke);
 }
 
-input[type='radio']:checked + .form-control {
+input[type='radio']:checked + label {
     border: 1px solid var(--color-eclipse);
     background-color: var(--color-white);
 }
@@ -236,9 +241,6 @@ input[type='radio']:checked + .form-control {
 }
 
 .quiz__form {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
     height: 100%;
     position: relative;
 }
@@ -253,7 +255,6 @@ input[type='radio']:checked + .form-control {
     width: 90%;
     display: flex;
     justify-content: space-between;
-    margin-top: auto;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -309,7 +310,8 @@ input[type='radio']:checked + .form-control {
     height: 1px;
     content: '';
     width: 100%;
-    bottom: 3px;
+    right: 0;
+    bottom: 2px;
     background-color: var(--color-eclipse);
 }
 
@@ -325,6 +327,7 @@ input[type='radio']:checked + .form-control {
     user-select: none;
     cursor: pointer;
     align-items: center;
+    border: 1px solid transparent;
 }
 
 .select-btn .btn-text {
@@ -339,6 +342,11 @@ input[type='radio']:checked + .form-control {
     font-size: 16px;
     line-height: 20px;
     color: var(--color-eclipse);
+}
+
+.select-btn.open {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-eclipse); 
 }
 
 .select-btn.open ~ .form__select-wrapper {
@@ -438,4 +446,163 @@ input[type='radio']:checked + .form-control {
 
 .prev-btn {
     display: none;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup.show {
+    display: block;
+}
+
+.popup__content {
+    padding: 15px;
+    text-align: center;
+    border-radius: var(--radius-24);
+    background-color: var(--color-white);
+    width: 40%;
+    height: 30%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popup h2 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.popup p {
+    font-size: 14px;
+    color: var(--color-nobel);
+    width: 400px;
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        max-height: 949px;
+    }
+
+    .quiz {
+        min-height: 949px;
+        padding: 24px 16px;
+        border-radius: 0;
+    }
+
+    .quiz__content {
+        flex-direction: column;
+    }
+
+    .quiz__desc {
+        text-align: center;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .quiz__desc h1 {
+        font-size: 22px;
+        line-height: 24px;
+        order: 1;
+    }
+
+    .quiz__desc p {
+        width: 70%;
+        order: -1;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 16px;
+    }
+
+    .steps {
+        width: 100%;
+        min-height: 560px;
+    }
+
+    .step {
+        height: 512px;
+        min-height: 560px;
+        width: 100%;
+        min-width: unset;
+        padding: 24px 16px;
+    }
+
+    .step__title {
+       flex-direction: column-reverse;
+    }
+
+    .quiz__form .form__group {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz__img-wrapper {
+        order: 1;
+    }
+
+    .next-btn,
+    .prev-btn {
+        width: 100%;
+    }
+
+    .quiz__form .quiz__btns {
+        width: 90%;
+        bottom: 15px;
+    }
+
+    .prev-btn {
+        margin-right: 10px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        justify-content: center;
+    }
+
+    .next-btn svg {
+        margin-left: 5px;
+    }
+
+    .prev-btn svg {
+        margin-right: 5px;
+    }
+
+    .form__policy {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .step--selection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step--selection .form__group {
+        margin-bottom: auto;
+    }
+
+    .popup__content {
+        width: 100%;
+        height: 100%;
+        height: 570px;
+        width: 90%;
+        top: 59%;
+    }  
+    .popup__content p {
+        width: 100%;
+    }  
 }
